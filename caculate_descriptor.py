@@ -2,6 +2,10 @@ from rdkit.ML.Descriptors import MoleculeDescriptors
 from rdkit.Chem import Descriptors
 from rdkit import Chem
 import pandas as pd
+import argparse
+
+
+
 
 def calc_descriptors_from_file(filename):
     """ calculates rdkit descriptors from a smiles.txt file """
@@ -19,6 +23,10 @@ def calc_descriptors_from_file(filename):
 
 
 if __name__ == "__main__":
-    import sys
-    filename = sys.argv[1]
-    calc_descriptors_from_file(filename)
+    parser = argparse.ArgumentParser(description='Process RDKit descriptors from smiles.txt file.')
+    parser.add_argument('filename', metavar='F', type=str,
+                        help='the filename of the smiles.txt file')
+
+    args = parser.parse_args()
+
+    calc_descriptors_from_file(args.filename)
