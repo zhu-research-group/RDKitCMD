@@ -70,9 +70,11 @@ if __name__ == "__main__":
     for cmp, similarity, neighbor in zip(source_fps.index, similarities, nns):
         neighbor_file.write(str(cmp) + '\t' + str(target_fps.index[neighbor]) + '\t' + str(similarity) + '\n')
 
+    neighbor_file.close()
+
     similarity_matrix = pd.DataFrame(similarity_matrix, index=source_fps.index, columns=target_fps.index)
 
-    neighbor_file.close()
+    similarity_matrix.to_csv('similarity_matrix.txt', sep='\t')
 
 
 
