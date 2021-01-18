@@ -1,6 +1,6 @@
 # Command line scripts for performing RDKit-based cheminformatics operations
 
-Questions? email danrusso@rutgers.edu
+Questions? email danrusso@camden.rutgers.edu
 
 ## Requirements
 
