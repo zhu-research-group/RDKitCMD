@@ -21,3 +21,20 @@ file by running the following command in the directory containing the file:
 
 3) With the rdkitcmd environment loaded, all scripts can be run as directed in the script from the command line.
 
+## Config
+
+There is a configuration file that is required for some functionality in the package. 
+It should be named `config.py` and contain the following variables and values:
+
+`SAAGAR_SMARTS` assigned to the path of the most recent version of Saagar fingerprint SMARTS.  This can
+ be found on [their website](https://www.sciome.com/saagar/).
+ 
+ ## Fingerprinting
+ 
+ Generate comma-separated values (csv) files from a set of compounds in SD format (SDF).  Available fingerprints 
+ are the Saagar structures (v1).  Basic usage is as follows:
+ 
+ ```
+python fingerprints.py --out_file fingerprints.csv --in_file chemicals.sdf --fp sag
+```
+
